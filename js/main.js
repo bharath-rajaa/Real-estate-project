@@ -78,7 +78,6 @@
     });
 
     // Property sidebar functionality
-    // Property sidebar functionality
     $(document).ready(function () {
         // Load default content (Plots) on page load
         loadPropertyData('Plot');
@@ -93,17 +92,29 @@
             console.log('Loading data for category:', category);
             $.getJSON('js/data.json', function (data) {
                 console.log('Data loaded:', data);
-                // Filter data based on category
-                var filteredData = data.filter(function (item) {
-                    return item.category === category;
-                });
-                console.log('Filtered data:', filteredData);
+                
+                // Map category names to JSON keys
+                const categoryMap = {
+                    'Plot': 'plots',
+                    'Flat': 'flats',
+                    'acre': 'acre',
+                    'Resale': 'resale_properties',
+                    'Bank': 'bank_properties'
+                };
+                
+                // Get the JSON key for this category
+                const jsonKey = categoryMap[category] || category.toLowerCase() + 's';
+                
+                // Filter data based on category - get the correct array from the data object
+                var categoryData = data[jsonKey] || [];
+                
+                console.log('Filtered data:', categoryData);
 
                 // Generate HTML for the property content
                 var propertyContent = '<h3>' + category + ' Properties</h3>';
 
-                if (filteredData.length > 0) {
-                    filteredData.forEach(function (property) {
+                if (categoryData.length > 0) {
+                    categoryData.forEach(function (property) {
                         propertyContent += '<div class="property-card mb-3 p-3 border">';
                         // Add property image if available
                         if (property.images && property.images.length > 0) {
@@ -116,7 +127,7 @@
                         propertyContent += '<p><strong>Price:</strong> ₹' + property.price.toLocaleString() + '</p>';
                         propertyContent += '<p><strong>Size:</strong> ' + property.sqft + ' sqft</p>';
                         propertyContent += '<p><strong>Status:</strong> ' + property.status + '</p>';
-                        propertyContent += '<p><strong>Features:</strong> ' + property.features.join(', ') + '</p>';
+                        propertyContent += '<p><strong>Features:</strong> ' + (property.features ? property.features.join(', ') : 'N/A') + '</p>';
                         propertyContent += '<p>' + property.description + '</p>';
                         propertyContent += '</div>';
                     });
@@ -214,8 +225,15 @@
             // Update category counts in sidebar
             updateCategoryCounts(data);
 
-            // Initialize by displaying all properties
-            displayProperties(allProperties);
+            // Initialize by displaying only bank properties on index.html
+            const bankProperties = allProperties.filter(property => property.category === 'bank');
+            displayProperties(bankProperties);
+
+            // Display 6 random properties in the Property Listing section on index.html
+            if (randomPropertiesContainer) {
+                const randomProperties = getRandomProperties(allProperties, 6);
+                displayPropertiesInContainer(randomProperties, randomPropertiesContainer);
+            }
         } catch (error) {
             console.error('Error fetching properties:', error);
         }
@@ -245,6 +263,7 @@
 
     // DOM elements
     const propertiesContainer = document.getElementById('properties-container');
+    const randomPropertiesContainer = document.getElementById('random-properties-container');
     const categoryItems = document.querySelectorAll('.category-item');
     const countElement = document.getElementById('count');
 
@@ -326,13 +345,82 @@
                         <div class="property-price">${property.price}</div>
                         ${property.emi ? `<div class="property-emi">${property.emi}/month</div>` : ''}
                         <div class="property-actions">
-                            <a href="#" class="btn btn-primary">View Details</a>
+                            <a href="single_property.html?id=${property.id}" class="btn btn-primary">View Details</a>
                             <a href="#" class="btn btn-secondary">Contact Agent</a>
                         </div>
                     </div>
                 `;
 
             propertiesContainer.appendChild(propertyCard);
+        });
+    }
+
+    // Function to get random properties
+    function getRandomProperties(propertiesArray, count) {
+        // Shuffle the array using Fisher-Yates algorithm
+        const shuffled = [...propertiesArray];
+        for (let i = shuffled.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+        // Return the first 'count' elements
+        return shuffled.slice(0, count);
+    }
+
+    // Function to display properties in a specific container
+    function displayPropertiesInContainer(propertiesArray, container) {
+        // Clear the container
+        container.innerHTML = '';
+
+        // Check if there are properties to display
+        if (propertiesArray.length === 0) {
+            container.innerHTML = `
+                    <div class="no-results">
+                        <i class="fas fa-search"></i>
+                        <h3>No Properties Found</h3>
+                        <p>We couldn't find any properties in this category. Please try another category.</p>
+                    </div>
+                `;
+            return;
+        }
+
+        // Create property cards for each property
+        propertiesArray.forEach(property => {
+            const propertyCard = document.createElement('div');
+            propertyCard.className = 'property-card';
+            propertyCard.innerHTML = `
+                    <img src="${property.image}" alt="${property.title}" class="property-image">
+                    <div class="property-info">
+                        <h3 class="property-title">${property.title}</h3>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>${property.location}</span>
+                        </div>
+                        <p class="property-description">${property.description}</p>
+                        <div class="property-features">
+                            <div class="property-feature">
+                                <i class="fas fa-bed"></i>
+                                <span>${property.features.bedrooms}</span>
+                            </div>
+                            <div class="property-feature">
+                                <i class="fas fa-bath"></i>
+                                <span>${property.features.bathrooms} Bath</span>
+                            </div>
+                            <div class="property-feature">
+                                <i class="fas fa-arrows-alt"></i>
+                                <span>${property.features.area}</span>
+                            </div>
+                        </div>
+                        <div class="property-price">${property.price}</div>
+                        ${property.emi ? `<div class="property-emi">${property.emi}/month</div>` : ''}
+                        <div class="property-actions">
+                            <a href="single_property.html?id=${property.id}" class="btn btn-primary">View Details</a>
+                            <a href="#" class="btn btn-secondary">Contact Agent</a>
+                        </div>
+                    </div>
+                `;
+
+            container.appendChild(propertyCard);
         });
     }
 
@@ -359,7 +447,8 @@
                     'flats': 'Flats',
                     'acre': 'Acre',
                     'resale': 'Resale Properties',
-                    'bank': 'Bank Properties'
+                    'bank': 'Bank Properties',
+                    'all': 'All Properties'
                 };
                 breadcrumb.textContent = categoryNames[categoryParam] || categoryParam;
             }
@@ -368,5 +457,170 @@
 
     // Run URL parameter handling after a short delay to ensure DOM is ready
     setTimeout(handleCategoryFromURL, 100);
+
+    // Single Property Page Functionality
+    function initSinglePropertyPage() {
+        // Check if we're on the single property page
+        if (!document.getElementById('property-details')) {
+            return; // Not on single property page
+        }
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const propertyId = urlParams.get('id');
+
+        if (propertyId) {
+            loadSingleProperty(propertyId);
+        } else {
+            // No property ID, show error or redirect
+            document.getElementById('property-title').textContent = 'Property Not Found';
+            document.getElementById('property-description').textContent = 'The property you are looking for does not exist or has been removed.';
+        }
+    }
+
+    // Load a single property by ID
+    async function loadSingleProperty(propertyId) {
+        try {
+            const response = await fetch('js/data.json');
+            const data = await response.json();
+
+            // Find the property in any category
+            let property = null;
+            let propertyCategory = '';
+            
+            const allData = [
+                { key: 'plots', category: 'Plots', items: data.plots || [] },
+                { key: 'flats', category: 'Flats', items: data.flats || [] },
+                { key: 'acre', category: 'Acre', items: data.acre || [] },
+                { key: 'resale_properties', category: 'Resale Properties', items: data.resale_properties || [] },
+                { key: 'bank_properties', category: 'Bank Properties', items: data.bank_properties || [] }
+            ];
+
+            for (const dataGroup of allData) {
+                property = dataGroup.items.find(p => p.id == propertyId);
+                if (property) {
+                    propertyCategory = dataGroup.category;
+                    break;
+                }
+            }
+
+            if (!property) {
+                document.getElementById('property-title').textContent = 'Property Not Found';
+                document.getElementById('property-description').textContent = 'The property you are looking for does not exist or has been removed.';
+                return;
+            }
+
+            // Update page title and header
+            document.getElementById('property-page-title').textContent = propertyCategory + ' Property';
+            document.title = property.name + ' - PlotAndFlats';
+
+            // Update breadcrumb
+            const breadcrumbCategory = document.getElementById('breadcrumb-category');
+            const breadcrumbProperty = document.getElementById('breadcrumb-property');
+            
+            // Set category URL and text
+            const categoryUrl = 'single_category.html?category=' + getCategoryKey(propertyCategory);
+            breadcrumbCategory.innerHTML = `<a href="${categoryUrl}">${propertyCategory}</a>`;
+            breadcrumbProperty.textContent = property.name;
+
+            // Update property details
+            document.getElementById('property-title').textContent = property.name;
+            document.getElementById('property-category').textContent = propertyCategory;
+            document.getElementById('property-status').textContent = property.status || 'Available';
+            document.getElementById('property-description').textContent = property.description;
+            document.getElementById('property-location').textContent = property.location;
+
+            // Update main image
+            const mainImage = document.getElementById('main-image');
+            if (property.images && property.images.length > 0) {
+                mainImage.src = property.images[0];
+                mainImage.alt = property.name;
+            }
+
+            // Update features
+            const featuresList = document.getElementById('features-list');
+            if (property.features && property.features.length > 0) {
+                featuresList.innerHTML = '<ul>' + property.features.map(f => `<li>${f}</li>`).join('') + '</ul>';
+            } else {
+                featuresList.innerHTML = '<p>No features listed.</p>';
+            }
+
+            // Update "Back to Category" button
+            const backBtn = document.getElementById('back-to-category-btn');
+            backBtn.href = categoryUrl;
+
+            // Highlight current category in sidebar
+            const categoryKey = getCategoryKey(propertyCategory);
+            document.querySelectorAll('.category-nav-item').forEach(item => {
+                if (item.getAttribute('data-category') === categoryKey) {
+                    item.classList.add('active');
+                    item.style.backgroundColor = '#0d6efd';
+                    item.style.color = '#fff';
+                }
+            });
+
+            // Load related properties (same category, different property)
+            loadRelatedProperties(propertyId, propertyCategory, data);
+
+        } catch (error) {
+            console.error('Error loading property:', error);
+            document.getElementById('property-title').textContent = 'Error Loading Property';
+            document.getElementById('property-description').textContent = 'There was an error loading the property details. Please try again later.';
+        }
+    }
+
+    // Get category key from category name
+    function getCategoryKey(categoryName) {
+        const categoryMap = {
+            'Plots': 'plots',
+            'Flats': 'flats',
+            'Acre': 'acre',
+            'Resale Properties': 'resale',
+            'Bank Properties': 'bank'
+        };
+        return categoryMap[categoryName] || 'all';
+    }
+
+    // Load related properties from the same category
+    function loadRelatedProperties(currentPropertyId, categoryName, data) {
+        const relatedContainer = document.getElementById('related-properties');
+        const categoryKey = getCategoryKey(categoryName);
+        
+        const categoryDataMap = {
+            'plots': data.plots || [],
+            'flats': data.flats || [],
+            'acre': data.acre || [],
+            'resale': data.resale_properties || [],
+            'bank': data.bank_properties || []
+        };
+        
+        const categoryData = categoryDataMap[categoryKey] || [];
+        const relatedProperties = categoryData.filter(p => p.id != currentPropertyId).slice(0, 4);
+
+        if (relatedProperties.length === 0) {
+            relatedContainer.innerHTML = '<p class="no-related">No related properties found.</p>';
+            return;
+        }
+
+        relatedContainer.innerHTML = relatedProperties.map(property => `
+            <div class="col-md-6 col-lg-3">
+                <div class="related-property-card">
+                    <img src="${property.images && property.images[0] ? property.images[0] : 'img/placeholder.jpg'}" 
+                         class="related-image" alt="${property.name}">
+                    <div class="related-info">
+                        <h6 class="related-title">${property.name}</h6>
+                        <p class="related-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            ${property.location || 'N/A'}
+                        </p>
+                        <p class="related-price">₹${property.price ? property.price.toLocaleString() : 'N/A'}</p>
+                        <span class="related-status">${property.status || 'Available'}</span>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    // Initialize single property page
+    initSinglePropertyPage();
 
 })(jQuery);
