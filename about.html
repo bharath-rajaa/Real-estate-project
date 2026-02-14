@@ -48,21 +48,44 @@
 
          <!-- Navbar Start -->
         <header class="container-fluid nav-bar bg-transparent">
-            <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
-                <a href="index.html" class="navbar-brand d-flex align-items-center text-center">
-                    <div class="icon p-2 me-2">
-                        <img class="img-fluid" src="img/Logo.png" alt="PlotAndFlats Logo"
-                            style="width: 90px; height: 80px;">
+            <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4" style="height: 100px;">
+                <div class="container-fluid">
+                    <div class="row w-100 align-items-center d-lg-none">
+                        <!-- Logo Column - col-4 -->
+                        <div class="col-3 d-flex align-items-center">
+                            <a href="index.html" class="navbar-brand d-flex align-items-center">
+                                <div class="icon p-1">
+                                    <img class="img-fluid" src="img/Logo.png" alt="PlotAndFlats Logo"
+                                        style="width: 40px; height: 40px;">
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Text Column - col-6 -->
+                        <div class="col-7 d-flex align-items-center justify-content-start">
+                            <div class="navbar-text-container">
+                                <h2 class="m-0 text-primary heading mobile-brand-text">PlotAndFlats.com</h2>
+                                <h2 class="m-0 mobile-tagline">A Concept Digital Estate Solution</h2>
+                            </div>
+                        </div>
+                        <!-- Toggle Button Column - col-2 -->
+                        <div class="col-2 d-flex justify-content-end">
+                            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" title="Toggle navigation menu">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                        </div>
                     </div>
-
-                    <div class="mt-2">
-                        <h2 class="m-0 text-primary heading fs-2">PlotAndFlats.com </h2>
-                        <h2 style="font-size: 15px;">The Concept Digital Estate Solution</h2>
-                    </div>
-                </a>
-                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                    <!-- Desktop Brand -->
+                    <a href="index.html" class="navbar-brand d-none d-lg-flex align-items-center text-center">
+                        <div class="icon p-2 me-2">
+                            <img class="img-fluid" src="img/Logo.png" alt="PlotAndFlats Logo"
+                                style="width: 90px; height: 80px;">
+                        </div>
+                        <div class="mt-2">
+                            <h2 class="m-0 text-primary heading fs-2">PlotAndFlats.com </h2>
+                            <h2 style="font-size: 15px;">The Concept Digital Estate Solution</h2>
+                        </div>
+                    </a>
+                </div>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
                         <a href="index.html" class="nav-item nav-link ">Home</a>
