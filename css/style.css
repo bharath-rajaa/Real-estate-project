@@ -1711,9 +1711,9 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: #FFFFFF !important;
+    background: #FFFFFF ;
     border-radius: 50px;
-    border: 1px dashed var(--primary) !important;
+    border: 5px solid var(--primary);
 }
 
 
