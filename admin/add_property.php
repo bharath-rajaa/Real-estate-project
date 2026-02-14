@@ -1,10 +1,19 @@
 <?php
 // Set headers for JSON response
 header('Content-Type: application/json');
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: POST, OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type');
 
-// Enable error reporting for debugging
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+// Handle preflight OPTIONS request
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit;
+}
+
+// Disable error reporting for production/clean JSON
+error_reporting(0);
+ini_set('display_errors', 0);
 
 // Check if the request method is POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -108,12 +117,14 @@ $newJsonContent = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES)
 
 // Write the updated data back to the file
 if (file_put_contents($jsonFilePath, $newJsonContent)) {
-    echo json_encode([
+    $response = [
         'success' => true,
         'message' => 'Property added successfully!',
         'property' => $newProperty
-    ]);
+    ];
+    echo json_encode($response);
 } else {
-    echo json_encode(['success' => false, 'message' => 'Error saving data to file']);
+    $response = ['success' => false, 'message' => 'Error saving data to file'];
+    echo json_encode($response);
 }
 ?>

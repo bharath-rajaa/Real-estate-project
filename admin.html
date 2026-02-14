@@ -69,7 +69,7 @@
         <!-- Admin Dashboard Start -->
         <div class="container-fluid my-5">
             <h1 class="text-center mb-4">Admin Dashboard</h1>
-            
+
             <!-- Stats Cards -->
             <!-- <div class="row mb-5">
                 <div class="col-md-4 mb-4">
@@ -101,17 +101,19 @@
                 </div>
             </div> -->
 
-            <!-- Add Property Form -->
+            <!-- Add/Edit Property Form -->
             <div class="card shadow">
                 <div class="card-header bg-primary text-white">
-                    <h4 class="mb-0"><i class="fas fa-plus-circle me-2"></i>Add Bank Property</h4>
+                    <h4 class="mb-0"><i class="fas fa-plus-circle me-2" id="form-icon"></i><span id="form-title">Add
+                            Bank Property</span></h4>
                 </div>
                 <div class="card-body">
-                    <form id="property-form" action="admin/add_property.php" method="POST" enctype="multipart/form-data">
+                    <form id="property-form" action="admin/addProperty.php" method="POST" enctype="multipart/form-data">
                         <div class="row">
                             <!-- Category Selection -->
                             <div class="col-md-6 mb-3">
-                                <label for="category" class="form-label">Category <span class="text-danger">*</span></label>
+                                <label for="category" class="form-label">Category <span
+                                        class="text-danger">*</span></label>
                                 <select class="form-select" id="category" name="category" required>
                                     <option value="">Select Category</option>
                                     <!-- <option value="plots">Plot</option>
@@ -124,56 +126,70 @@
 
                             <!-- Property Name -->
                             <div class="col-md-6 mb-3">
-                                <label for="name" class="form-label">Property Name <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="name" name="name" required placeholder="Enter property name">
+                                <label for="name" class="form-label">Property Name <span
+                                        class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="name" name="name" required
+                                    placeholder="Enter property name">
                             </div>
 
                             <!-- Location -->
                             <div class="col-md-6 mb-3">
-                                <label for="location" class="form-label">Location <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="location" name="location" required placeholder="Enter location">
+                                <label for="location" class="form-label">Location <span
+                                        class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="location" name="location" required
+                                    placeholder="Enter location">
                             </div>
 
                             <!-- Latitude -->
                             <div class="col-md-3 mb-3">
                                 <label for="latitude" class="form-label">Latitude</label>
-                                <input type="number" step="any" class="form-control" id="latitude" name="latitude" placeholder="e.g., 12.9121">
+                                <input type="number" step="any" class="form-control" id="latitude" name="latitude"
+                                    placeholder="e.g., 12.9121">
                             </div>
 
                             <!-- Longitude -->
                             <div class="col-md-3 mb-3">
                                 <label for="longitude" class="form-label">Longitude</label>
-                                <input type="number" step="any" class="form-control" id="longitude" name="longitude" placeholder="e.g., 77.7223">
+                                <input type="number" step="any" class="form-control" id="longitude" name="longitude"
+                                    placeholder="e.g., 77.7223">
                             </div>
 
                             <!-- Description -->
                             <div class="col-12 mb-3">
-                                <label for="description" class="form-label">Description <span class="text-danger">*</span></label>
-                                <textarea class="form-control" id="description" name="description" rows="3" required placeholder="Enter property description"></textarea>
+                                <label for="description" class="form-label">Description <span
+                                        class="text-danger">*</span></label>
+                                <textarea class="form-control" id="description" name="description" rows="3" required
+                                    placeholder="Enter property description"></textarea>
                             </div>
 
                             <!-- BHK (for flats/resale/bank) -->
                             <div class="col-md-4 mb-3">
                                 <label for="bhk" class="form-label">BHK</label>
-                                <input type="text" class="form-control" id="bhk" name="bhk" placeholder="e.g., 2 BHK, 3 BHK">
+                                <input type="text" class="form-control" id="bhk" name="bhk"
+                                    placeholder="e.g., 2 BHK, 3 BHK">
                             </div>
 
                             <!-- Square Feet -->
                             <div class="col-md-4 mb-3">
-                                <label for="sqft" class="form-label">Square Feet <span class="text-danger">*</span></label>
-                                <input type="number" class="form-control" id="sqft" name="sqft" required placeholder="Enter area in sqft">
+                                <label for="sqft" class="form-label">Square Feet <span
+                                        class="text-danger">*</span></label>
+                                <input type="number" class="form-control" id="sqft" name="sqft" required
+                                    placeholder="Enter area in sqft">
                             </div>
 
                             <!-- Price -->
                             <div class="col-md-4 mb-3">
-                                <label for="price" class="form-label">Price (₹) <span class="text-danger">*</span></label>
-                                <input type="number" class="form-control" id="price" name="price" required placeholder="Enter price">
+                                <label for="price" class="form-label">Price (₹) <span
+                                        class="text-danger">*</span></label>
+                                <input type="number" class="form-control" id="price" name="price" required
+                                    placeholder="Enter price">
                             </div>
 
                             <!-- EMI -->
                             <div class="col-md-6 mb-3">
                                 <label for="emi" class="form-label">EMI (₹/month)</label>
-                                <input type="number" class="form-control" id="emi" name="emi" placeholder="Enter EMI amount">
+                                <input type="number" class="form-control" id="emi" name="emi"
+                                    placeholder="Enter EMI amount">
                             </div>
 
                             <!-- Status -->
@@ -191,34 +207,79 @@
                             <!-- Nearby Landmarks -->
                             <div class="col-12 mb-3">
                                 <label for="nearby_landmarks" class="form-label">Nearby Landmarks</label>
-                                <input type="text" class="form-control" id="nearby_landmarks" name="nearby_landmarks" placeholder="e.g., Metro Station – 1 km, School – 2 km (comma separated)">
+                                <input type="text" class="form-control" id="nearby_landmarks" name="nearby_landmarks"
+                                    placeholder="e.g., Metro Station – 1 km, School – 2 km (comma separated)">
                             </div>
 
                             <!-- Features -->
                             <div class="col-12 mb-3">
                                 <label for="features" class="form-label">Features</label>
-                                <input type="text" class="form-control" id="features" name="features" placeholder="e.g., Swimming Pool, Gym, Parking (comma separated)">
+                                <input type="text" class="form-control" id="features" name="features"
+                                    placeholder="e.g., Swimming Pool, Gym, Parking (comma separated)">
                             </div>
 
                             <!-- Image URL -->
                             <div class="col-12 mb-3">
                                 <label for="image_url" class="form-label">Image URL</label>
-                                <input type="url" class="form-control" id="image_url" name="image_url" placeholder="Enter image URL (e.g., https://picsum.photos/seed/property/600/400)">
+                                <input type="url" class="form-control" id="image_url" name="image_url"
+                                    placeholder="Enter image URL (e.g., https://picsum.photos/seed/property/600/400)">
                             </div>
+
+                            <!-- Hidden Property ID -->
+                            <input type="hidden" id="property_id" name="id" value="">
 
                             <!-- Submit Button -->
                             <div class="col-12 text-center">
-                                <a type="submit" class="btn btn-primary btn-lg px-5 ">
+                                <button type="submit" id="submit-btn" class="btn btn-primary btn-lg px-5">
                                     <i class="fas fa-save me-2"></i>Add Property
-                                </a>
-                                <a type="reset" class="btn btn-secondary btn-lg px-5 ms-3">
+                                </button>
+                                <button type="reset" class="btn btn-secondary btn-lg px-5 ms-3" onclick="resetForm()">
                                     <i class="fas fa-undo me-2"></i>Reset
-                                </a>
+                                </button>
+                                <button type="button" id="cancel-edit-btn" class="btn btn-warning btn-lg px-5 ms-3"
+                                    style="display: none;" onclick="cancelEdit()">
+                                    <i class="fas fa-times me-2"></i>Cancel Edit
+                                </button>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
+
+            <!-- Existing Bank Properties Section -->
+            <div class="card shadow mt-4">
+                <div class="card-header bg-info text-white">
+                    <h4 class="mb-0"><i class="fas fa-list me-2"></i>Existing Bank Properties</h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover" id="bank-properties-table">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Image</th>
+                                    <th>Property Name</th>
+                                    <th>Location</th>
+                                    <th>BHK</th>
+                                    <th>Sq Ft</th>
+                                    <th>Price (₹)</th>
+                                    <th>EMI (₹)</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="bank-properties-body">
+                                <!-- Bank properties will be loaded here -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="no-bank-properties" class="text-center py-4" style="display: none;">
+                        <i class="fas fa-folder-open fa-3x text-muted mb-3"></i>
+                        <p class="text-muted">No bank properties found.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Existing Bank Properties Section End -->
 
             <!-- Success/Error Message -->
             <div id="message-container" class="mt-3"></div>
@@ -255,69 +316,162 @@
 
     <!-- Admin Dashboard Script -->
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             // Load property statistics
             loadPropertyStats();
 
+            // Check backend connection
+            checkBackendConnection();
+
+            // Load bank properties
+            loadBankProperties();
+
+            function checkBackendConnection() {
+                const url = 'admin/check_connection.php';
+                $.ajax({
+                    url: url,
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function (response) {
+                        if (response.status !== 'ok') {
+                            showConnectionError(url, 'Invalid Response', JSON.stringify(response));
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        showConnectionError(url, xhr.status, error || status);
+                    }
+                });
+            }
+
+            function showConnectionError(url, status, errorDetails) {
+                const absoluteUrl = new URL(url, window.location.href).href;
+                let advice = '<p class="mb-0">Please ensure:</p><ul class="mb-0"><li>You are running this via <strong>localhost</strong> (e.g., http://localhost/real_estate/...)</li><li><strong>Apache/XAMPP</strong> is running.</li></ul>';
+
+                // Detect Live Server or similar non-PHP environments
+                if ((status === 200 && errorDetails.toString().includes("SyntaxError")) || window.location.port > 1024) {
+                    advice = `
+                        <div class="alert alert-warning mt-2">
+                            <strong><i class="fas fa-lightbulb me-2"></i>Likely Cause: Live Server Extension</strong>
+                            <p class="mb-1">You seem to be using a "Live Server" extension (port ${window.location.port}). These do <strong>NOT</strong> support PHP.</p>
+                            <p class="mb-0"><strong>Solution:</strong> Open XAMPP Control Panel, Start Apache, and visit:</p>
+                            <a href="http://localhost/real_estate/admin.html" class="fw-bold" target="_blank">http://localhost/real_estate/admin.html</a>
+                        </div>
+                     `;
+                }
+
+                const errorHtml = `
+                    <div class="alert alert-danger alert-dismissible fade show sticky-top shadow-lg" role="alert" style="z-index: 1050;">
+                        <h4 class="alert-heading"><i class="fas fa-exclamation-triangle me-2"></i>Backend Connection Error</h4>
+                        <p>The PHP backend is not reachable. Data cannot be saved.</p>
+                        <div class="bg-white p-2 rounded text-dark mb-3 small">
+                            <strong>Attempted URL:</strong> ${absoluteUrl}<br>
+                            <strong>Status:</strong> ${status}<br>
+                            <strong>Error:</strong> ${errorDetails}
+                        </div>
+                        <hr>
+                        ${advice}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                `;
+                $('body').prepend(errorHtml);
+            }
+            loadBankProperties();
+
             // Handle form submission
-            $('#property-form').on('submit', function(e) {
+            $('#property-form').on('submit', function (e) {
                 e.preventDefault();
-                
+
                 // Disable submit button
-                const submitBtn = $(this).find('button[type="submit"]');
-                submitBtn.prop('disabled', true).html('<i class="fas fa-spinner fa-spin me-2"></i>Adding...');
+                const submitBtn = $('#submit-btn');
+                const originalBtnText = submitBtn.html();
+                submitBtn.prop('disabled', true).html('<i class="fas fa-spinner fa-spin me-2"></i>Processing...');
 
                 // Get form data
                 const formData = new FormData(this);
+                const propertyId = $('#property_id').val();
+                const isEdit = propertyId && propertyId !== '';
+
+                // Determine the URL and operation type
+                let url = 'admin/add_property.php';
+                if (isEdit) {
+                    url = 'admin/update_property.php';
+                }
 
                 // Submit form via AJAX
                 $.ajax({
-                    url: 'admin/add_property.php',
+                    url: url,
                     type: 'POST',
                     data: formData,
                     processData: false,
                     contentType: false,
-                    success: function(response) {
-                        const result = JSON.parse(response);
-                        
-                        if (result.success) {
-                            // Show success message
-                            showMessage('success', result.message);
-                            
-                            // Reset form
-                            $('#property-form')[0].reset();
-                            
-                            // Reload statistics
-                            loadPropertyStats();
-                        } else {
-                            // Show error message
-                            showMessage('error', result.message);
+                    success: function (response) {
+                        try {
+                            const result = JSON.parse(response);
+
+                            if (result.success) {
+                                // Show success message
+                                showMessage('success', result.message);
+
+                                // Reset form
+                                resetForm();
+
+                                // Reload bank properties table
+                                loadBankProperties();
+
+                                // Reload statistics
+                                loadPropertyStats();
+                            } else {
+                                // Show error message
+                                showMessage('error', result.message);
+                            }
+                        } catch (e) {
+                            console.error('Parse error:', e);
+                            console.log('Raw response:', response);
+                            showMessage('error', 'Invalid response from server. Check console for details.');
+                            // Show raw response in a dismissible alert for immediate visibility
+                            const errorDetail = typeof response === 'string' ? response.substring(0, 200) : 'No response text';
+                             showConnectionError(url, 200, "JSON Parse Error: " + e.message + "<br><small>Response start: " + errorDetail + "...</small>");
                         }
                     },
-                    error: function(xhr, status, error) {
-                        showMessage('error', 'An error occurred while adding the property. Please try again.');
+                    error: function (xhr, status, error) {
+                        let errorMsg = 'An error occurred. Please try again.';
+                        if (xhr.status === 0) {
+                            errorMsg = 'Network error. Please check your connection or server status.';
+                        } else if (xhr.status === 404) {
+                            errorMsg = 'Requested script not found (404).';
+                        } else if (xhr.status === 500) {
+                            errorMsg = 'Internal Server Error (500).';
+                        } else if (error) {
+                            errorMsg = 'Error: ' + error;
+                        }
+                        if (xhr.responseText) {
+                            console.log('Server response:', xhr.responseText);
+                        }
+                        showMessage('error', errorMsg);
                         console.error('Error:', error);
+                        console.error('Status:', status);
+                        console.error('XHR:', xhr);
                     },
-                    complete: function() {
+                    complete: function () {
                         // Re-enable submit button
-                        submitBtn.prop('disabled', false).html('<i class="fas fa-save me-2"></i>Add Property');
+                        submitBtn.prop('disabled', false).html(originalBtnText);
                     }
                 });
             });
 
             // Function to load property statistics
             function loadPropertyStats() {
-                $.getJSON('js/data.json', function(data) {
+                $.getJSON('js/data.json', function (data) {
                     let totalProperties = 0;
                     let availableProperties = 0;
                     let constructionProperties = 0;
 
                     // Count properties from all categories
-                    Object.keys(data).forEach(function(category) {
+                    Object.keys(data).forEach(function (category) {
                         const properties = data[category] || [];
                         totalProperties += properties.length;
 
-                        properties.forEach(function(property) {
+                        properties.forEach(function (property) {
                             if (property.status === 'Available') {
                                 availableProperties++;
                             } else if (property.status === 'Under Construction') {
@@ -330,29 +484,206 @@
                     $('#total-properties').text(totalProperties);
                     $('#available-properties').text(availableProperties);
                     $('#construction-properties').text(constructionProperties);
-                }).fail(function() {
+                }).fail(function () {
                     console.error('Error loading property statistics');
                 });
             }
+
+            // Function to load bank properties
+            function loadBankProperties() {
+                $.getJSON('js/data.json', function (data) {
+                    const bankProperties = data.bank_properties || [];
+                    const tbody = $('#bank-properties-body');
+                    const noBankProperties = $('#no-bank-properties');
+                    const table = $('#bank-properties-table');
+
+                    if (bankProperties.length === 0) {
+                        table.hide();
+                        noBankProperties.show();
+                        return;
+                    }
+
+                    table.show();
+                    noBankProperties.hide();
+
+                    tbody.empty();
+
+                    bankProperties.forEach(function (property) {
+                        const imageUrl = property.images && property.images[0] ? property.images[0] : 'https://picsum.photos/seed/default/600/400';
+                        const bhk = property.bhk ? property.bhk : '-';
+                        const emi = property.emi ? property.emi.toLocaleString() : '-';
+                        const price = property.price ? property.price.toLocaleString() : '-';
+
+                        const row = `
+                            <tr>
+                                <td>${property.id}</td>
+                                <td>
+                                    <img src="${imageUrl}" alt="${property.name}" 
+                                        style="width: 60px; height: 40px; object-fit: cover; border-radius: 4px;"
+                                        onerror="this.src='https://picsum.photos/seed/default/600/400'">
+                                </td>
+                                <td><strong>${property.name}</strong></td>
+                                <td>${property.location}</td>
+                                <td>${bhk}</td>
+                                <td>${property.sqft ? property.sqft.toLocaleString() : '-'}</td>
+                                <td>₹${price}</td>
+                                <td>₹${emi}</td>
+                                <td>
+                                    <span class="badge ${getStatusBadgeClass(property.status)}">${property.status}</span>
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary me-1" title="Edit" onclick="editBankProperty(${property.id})">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-danger" title="Delete" onclick="deleteBankProperty(${property.id})">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        `;
+                        tbody.append(row);
+                    });
+                }).fail(function () {
+                    console.error('Error loading bank properties');
+                    $('#bank-properties-table').hide();
+                    $('#no-bank-properties').show();
+                });
+            }
+
+            // Refresh bank properties (called after CRUD operations)
+            function refreshBankProperties() {
+                loadBankProperties();
+            }
+
+            // Function to get status badge class
+            function getStatusBadgeClass(status) {
+                switch (status) {
+                    case 'Available':
+                        return 'bg-success';
+                    case 'Sold':
+                        return 'bg-danger';
+                    case 'Under Construction':
+                        return 'bg-warning text-dark';
+                    case 'Bank Auction':
+                        return 'bg-info';
+                    default:
+                        return 'bg-secondary';
+                }
+            }
+
+            // Edit bank property function
+            window.editBankProperty = function (id) {
+                $.getJSON('js/data.json', function (data) {
+                    const bankProperties = data.bank_properties || [];
+                    const property = bankProperties.find(p => p.id === id);
+
+                    if (property) {
+                        // Populate form with property data
+                        $('#property_id').val(property.id);
+                        $('#category').val('bank_properties');
+                        $('#name').val(property.name);
+                        $('#location').val(property.location);
+                        $('#latitude').val(property.latitude || '');
+                        $('#longitude').val(property.longitude || '');
+                        $('#description').val(property.description);
+                        $('#bhk').val(property.bhk || '');
+                        $('#sqft').val(property.sqft || '');
+                        $('#price').val(property.price || '');
+                        $('#emi').val(property.emi || '');
+                        $('#status').val(property.status);
+                        $('#nearby_landmarks').val(property.nearby_landmarks ? property.nearby_landmarks.join(', ') : '');
+                        $('#features').val(property.features ? property.features.join(', ') : '');
+                        $('#image_url').val(property.images && property.images[0] ? property.images[0] : '');
+
+                        // Change form to edit mode
+                        $('#form-title').text('Edit Bank Property');
+                        $('#form-icon').removeClass('fa-plus-circle').addClass('fa-edit');
+                        $('#submit-btn').html('<i class="fas fa-save me-2"></i>Update Property');
+                        $('#cancel-edit-btn').show();
+
+                        // Scroll to form
+                        $('html, body').animate({
+                            scrollTop: $('#property-form').offset().top - 100
+                        }, 500);
+                    } else {
+                        showMessage('error', 'Property not found');
+                    }
+                }).fail(function () {
+                    showMessage('error', 'Error loading property data');
+                });
+            };
+
+            // Delete bank property function
+            window.deleteBankProperty = function (id) {
+                if (confirm('Are you sure you want to delete property ID: ' + id + '? This action cannot be undone.')) {
+                    $.ajax({
+                        url: 'admin/delete_property.php',
+                        type: 'POST',
+                        data: {
+                            category: 'bank_properties',
+                            id: id
+                        },
+                        success: function (response) {
+                            try {
+                                const result = JSON.parse(response);
+
+                                if (result.success) {
+                                    showMessage('success', result.message);
+
+                                    // Reload bank properties table
+                                    loadBankProperties();
+
+                                    // Reload statistics
+                                    loadPropertyStats();
+                                } else {
+                                    showMessage('error', result.message);
+                                }
+                            } catch (e) {
+                                showMessage('error', 'Invalid response from server');
+                            }
+                        },
+                        error: function (xhr, status, error) {
+                            showMessage('error', 'Error deleting property');
+                            console.error('Error:', error);
+                        }
+                    });
+                }
+            };
+
+            // Reset form function
+            window.resetForm = function () {
+                $('#property-form')[0].reset();
+                $('#property_id').val('');
+                $('#form-title').text('Add Bank Property');
+                $('#form-icon').removeClass('fa-edit').addClass('fa-plus-circle');
+                $('#submit-btn').html('<i class="fas fa-save me-2"></i>Add Property');
+                $('#cancel-edit-btn').hide();
+            };
+
+            // Cancel edit function
+            window.cancelEdit = function () {
+                resetForm();
+                showMessage('info', 'Edit cancelled');
+            };
 
             // Function to show message
             function showMessage(type, message) {
                 const alertClass = type === 'success' ? 'alert-success' : 'alert-danger';
                 const icon = type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle';
-                
+
                 const messageHtml = `
                     <div class="alert ${alertClass} alert-dismissible fade show" role="alert">
                         <i class="fas ${icon} me-2"></i>${message}
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 `;
-                
+
                 $('#message-container').html(messageHtml);
-                
+
                 // Auto-hide success messages after 5 seconds
                 if (type === 'success') {
-                    setTimeout(function() {
-                        $('.alert').fadeOut('slow', function() {
+                    setTimeout(function () {
+                        $('.alert').fadeOut('slow', function () {
                             $(this).remove();
                         });
                     }, 5000);

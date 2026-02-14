@@ -1,437 +1,647 @@
 {
-  "plots": [
-    {
-      "id": 1,
-      "category": "Plot",
-      "name": "Green Valley Enclave",
-      "location": "Sarjapur Road, Bangalore",
-      "latitude": 12.9121,
-      "longitude": 77.7223,
-      "nearby_landmarks": ["Wipro Office – 3 km", "International School – 2 km"],
-      "description": "DTCP-approved gated community plots ideal for residential construction with excellent appreciation value.",
-      "bhk": null,
-      "sqft": 1200,
-      "price": 4800000,
-      "emi": 42000,
-      "status": "Available",
-      "features": ["DTCP Approved", "Wide Roads", "Street Lights", "Water Supply"],
-      "images": ["https://picsum.photos/seed/plot101/600/400"]
-    },
-    {
-      "id": 2,
-      "category": "Plot",
-      "name": "Lakeview Gardens",
-      "location": "Yelahanka, Bangalore",
-      "latitude": 13.1007,
-      "longitude": 77.5963,
-      "nearby_landmarks": ["Kempegowda Airport – 12 km", "Yelahanka Lake – 1 km"],
-      "description": "Premium residential plots surrounded by greenery and calm environment.",
-      "bhk": null,
-      "sqft": 1500,
-      "price": 5250000,
-      "emi": 46000,
-      "status": "Available",
-      "features": ["Gated Layout", "Drainage System", "Park Area"],
-      "images": ["https://picsum.photos/seed/plot102/600/400"]
-    },
-    {
-      "id": 3,
-      "category": "Plot",
-      "name": "Golden City Plots",
-      "location": "Shadnagar, Hyderabad",
-      "latitude": 17.0706,
-      "longitude": 78.2003,
-      "nearby_landmarks": ["ORR – 5 km", "Railway Station – 3 km"],
-      "description": "HMDA-approved plots suitable for future investment and villa construction.",
-      "bhk": null,
-      "sqft": 1800,
-      "price": 3600000,
-      "emi": 31500,
-      "status": "Available",
-      "features": ["HMDA Approved", "Black Top Roads", "Security"],
-      "images": ["https://picsum.photos/seed/plot103/600/400"]
-    },
-    {
-      "id": 4,
-      "category": "Plot",
-      "name": "Sunrise County",
-      "location": "Sriperumbudur, Chennai",
-      "latitude": 12.9675,
-      "longitude": 79.9419,
-      "nearby_landmarks": ["Hyundai Plant – 4 km", "NH48 – 1 km"],
-      "description": "Residential plots near industrial hubs with high rental and resale potential.",
-      "bhk": null,
-      "sqft": 1000,
-      "price": 2800000,
-      "emi": 24500,
-      "status": "Sold",
-      "features": ["EB Connection", "Clear Title", "Children Park"],
-      "images": ["https://picsum.photos/seed/plot104/600/400"]
-    },
-    {
-      "id": 5,
-      "category": "Plot",
-      "name": "Elite Green Acres",
-      "location": "Mahabalipuram, Chennai",
-      "latitude": 12.6208,
-      "longitude": 80.1937,
-      "nearby_landmarks": ["Beach – 2 km", "ECR Road – 500 m"],
-      "description": "Beachside plots perfect for holiday homes and resorts.",
-      "bhk": null,
-      "sqft": 2400,
-      "price": 7200000,
-      "emi": 63000,
-      "status": "Available",
-      "features": ["Premium Location", "Compound Wall", "Water Connection"],
-      "images": ["https://picsum.photos/seed/plot105/600/400"]
-    }
-  ],
-  "flats": [
-    {
-      "id": 1,
-      "category": "Flat",
-      "name": "Skyline Heights",
-      "location": "Whitefield, Bangalore",
-      "latitude": 12.9698,
-      "longitude": 77.7499,
-      "nearby_landmarks": ["ITPL – 2 km", "Forum Mall – 1 km"],
-      "description": "Luxury apartments with modern amenities in IT corridor.",
-      "bhk": "2 BHK, 3 BHK",
-      "sqft": 1350,
-      "price": 9500000,
-      "emi": 83000,
-      "status": "Under Construction",
-      "features": ["Swimming Pool", "Gym", "Lift", "Power Backup"],
-      "images": ["https://picsum.photos/seed/flat201/600/400"]
-    },
-    {
-      "id": 2,
-      "category": "Flat",
-      "name": "Prestige Park View",
-      "location": "Electronic City, Bangalore",
-      "latitude": 12.8399,
-      "longitude": 77.6770,
-      "nearby_landmarks": ["Infosys – 3 km", "Metro Station – 2 km"],
-      "description": "Premium residential project ideal for IT professionals.",
-      "bhk": "2 BHK",
-      "sqft": 1150,
-      "price": 7800000,
-      "emi": 68000,
-      "status": "Available",
-      "features": ["Clubhouse", "Security", "Covered Parking"],
-      "images": ["https://picsum.photos/seed/flat202/600/400"]
-    },
-    {
-      "id": 3,
-      "category": "Flat",
-      "name": "Urban Nest",
-      "location": "Madhapur, Hyderabad",
-      "latitude": 17.4474,
-      "longitude": 78.3914,
-      "nearby_landmarks": ["Hitech City – 1 km", "Inorbit Mall – 2 km"],
-      "description": "Contemporary flats with excellent connectivity.",
-      "bhk": "3 BHK",
-      "sqft": 1650,
-      "price": 10200000,
-      "emi": 89000,
-      "status": "Available",
-      "features": ["Gym", "Jogging Track", "Power Backup"],
-      "images": ["https://picsum.photos/seed/flat203/600/400"]
-    },
-    {
-      "id": 4,
-      "category": "Flat",
-      "name": "Harbor View Residences",
-      "location": "OMR, Chennai",
-      "latitude": 12.9249,
-      "longitude": 80.2275,
-      "nearby_landmarks": ["IT Park – 3 km", "ECR – 6 km"],
-      "description": "Modern mid-rise apartments with sea-breeze and smart-home features.",
-      "bhk": "2 BHK, 3 BHK",
-      "sqft": 1200,
-      "price": 8200000,
-      "emi": 72000,
-      "status": "Available",
-      "features": ["Smart Home", "Gym", "Power Backup", "Covered Parking"],
-      "images": ["https://picsum.photos/seed/flat204/600/400"]
-    },
-    {
-      "id": 5,
-      "category": "Flat",
-      "name": "Pune Central Towers",
-      "location": "Kharadi, Pune",
-      "latitude": 18.5303,
-      "longitude": 73.9352,
-      "nearby_landmarks": ["EON IT Park – 2 km", "Airport – 12 km"],
-      "description": "Well-designed apartments close to major IT hubs and retail centers.",
-      "bhk": "2 BHK, 3 BHK",
-      "sqft": 1300,
-      "price": 7600000,
-      "emi": 67000,
-      "status": "Under Construction",
-      "features": ["Clubhouse", "Swimming Pool", "Security", "Lift"],
-      "images": ["https://picsum.photos/seed/flat205/600/400"]
-    }
-  ],
-  "resale_properties": [
-    {
-      "id": 1,
-      "category": "Resale",
-      "name": "Sunrise Residency",
-      "location": "Anna Nagar, Chennai",
-      "latitude": 13.0850,
-      "longitude": 80.2101,
-      "nearby_landmarks": ["Metro – 800 m", "School – 1 km"],
-      "description": "Ready-to-move resale apartment in a peaceful locality.",
-      "bhk": "3 BHK",
-      "sqft": 1450,
-      "price": 8900000,
-      "emi": 78000,
-      "status": "Available",
-      "features": ["Ready to Move", "Lift", "Covered Parking"],
-      "images": ["https://picsum.photos/seed/resale301/600/400"]
-    },
-    {
-      "id": 2,
-      "category": "Resale",
-      "name": "Green Homes",
-      "location": "BTM Layout, Bangalore",
-      "latitude": 12.9166,
-      "longitude": 77.6101,
-      "nearby_landmarks": ["Silk Board – 2 km", "Hospital – 1 km"],
-      "description": "Well-maintained resale flat with good ventilation.",
-      "bhk": "2 BHK",
-      "sqft": 1100,
-      "price": 7200000,
-      "emi": 63000,
-      "status": "Sold",
-      "features": ["Semi-Furnished", "24x7 Water"],
-      "images": ["https://picsum.photos/seed/resale302/600/400"]
-    },
-    {
-      "id": 3,
-      "category": "Resale",
-      "name": "Harbour Lane Apartment",
-      "location": "T. Nagar, Chennai",
-      "latitude": 13.0412,
-      "longitude": 80.2370,
-      "nearby_landmarks": ["Shopping District – 500 m", "Bus Stand – 1 km"],
-      "description": "Spacious resale apartment in a well-connected neighborhood.",
-      "bhk": "3 BHK",
-      "sqft": 1500,
-      "price": 9500000,
-      "emi": 83000,
-      "status": "Available",
-      "features": ["Covered Parking", "Lift", "Well Ventilated"],
-      "images": ["https://picsum.photos/seed/resale303/600/400"]
-    },
-    {
-      "id": 4,
-      "category": "Resale",
-      "name": "Maple Residency",
-      "location": "Kondapur, Hyderabad",
-      "latitude": 17.4320,
-      "longitude": 78.3840,
-      "nearby_landmarks": ["Hitech City – 4 km", "Metro – 3 km"],
-      "description": "Neat resale flat with recent renovations and good natural light.",
-      "bhk": "2 BHK",
-      "sqft": 1150,
-      "price": 6800000,
-      "emi": 59000,
-      "status": "Available",
-      "features": ["Semi-Furnished", "24x7 Water", "Security"],
-      "images": ["https://picsum.photos/seed/resale304/600/400"]
-    },
-    {
-      "id": 5,
-      "category": "Resale",
-      "name": "Civic Park Apartment",
-      "location": "Powai, Mumbai",
-      "latitude": 19.1190,
-      "longitude": 72.9040,
-      "nearby_landmarks": ["Powai Lake – 1 km", "IT Parks – 2 km"],
-      "description": "Well-located resale apartment with park-facing view.",
-      "bhk": "2 BHK",
-      "sqft": 1000,
-      "price": 12500000,
-      "emi": 109000,
-      "status": "Available",
-      "features": ["Park View", "Covered Parking", "Lift"],
-      "images": ["https://picsum.photos/seed/resale305/600/400"]
-    }
-  ],
-  "bank_properties": [
-    {
-      "id": 1,
-      "category": "Bank Property",
-      "name": "Bank Auction Villa",
-      "location": "OMR, Chennai",
-      "latitude": 12.9249,
-      "longitude": 80.2275,
-      "nearby_landmarks": ["IT Park – 3 km"],
-      "description": "Bank seized independent villa available below market price.",
-      "bhk": "4 BHK",
-      "sqft": 2600,
-      "price": 9800000,
-      "emi": 86000,
-      "status": "Bank Auction",
-      "features": ["Below Market Price", "Clear Title", "Immediate Registration"],
-      "images": ["https://picsum.photos/seed/bank401/600/400"]
-    },
-    {
-      "id": 2,
-      "category": "Bank Property",
-      "name": "Foreclosed Apartment",
-      "location": "Gachibowli, Hyderabad",
-      "latitude": 17.4401,
-      "longitude": 78.3489,
-      "nearby_landmarks": ["Financial District – 1 km"],
-      "description": "Foreclosed apartment with high rental potential.",
-      "bhk": "3 BHK",
-      "sqft": 1500,
-      "price": 6500000,
-      "emi": 57000,
-      "status": "Bank Auction",
-      "features": ["Discounted Price", "Good Connectivity"],
-      "images": ["https://picsum.photos/seed/bank402/600/400"]
-    },
-    {
-      "id": 3,
-      "category": "Bank Property",
-      "name": "Auctioned Studio Block",
-      "location": "Andheri East, Mumbai",
-      "latitude": 19.1196,
-      "longitude": 72.8697,
-      "nearby_landmarks": ["Metro – 1 km", "Business Park – 2 km"],
-      "description": "Bank-auctioned studio apartments block sold as a single lot; ideal for rental portfolio.",
-      "bhk": "Studio",
-      "sqft": 900,
-      "price": 4200000,
-      "emi": 37000,
-      "status": "Bank Auction",
-      "features": ["Bulk Sale", "Clear Title", "Immediate Handover"],
-      "images": ["https://picsum.photos/seed/bank403/600/400"]
-    },
-    {
-      "id": 4,
-      "category": "Bank Property",
-      "name": "Seized Independent House",
-      "location": "Kharghar, Navi Mumbai",
-      "latitude": 19.0330,
-      "longitude": 73.0297,
-      "nearby_landmarks": ["Central Park – 3 km"],
-      "description": "Independent house seized by bank; priced below market for quick sale.",
-      "bhk": "4 BHK",
-      "sqft": 2200,
-      "price": 7600000,
-      "emi": 67000,
-      "status": "Bank Auction",
-      "features": ["Below Market Price", "Clear Title", "Immediate Registration"],
-      "images": ["https://picsum.photos/seed/bank404/600/400"]
-    },
-    {
-      "id": 5,
-      "category": "Bank Property",
-      "name": "Foreclosed Penthouse",
-      "location": "Bandra West, Mumbai",
-      "latitude": 19.0550,
-      "longitude": 72.8296,
-      "nearby_landmarks": ["Bandra Bandstand – 1 km"],
-      "description": "High-end foreclosed penthouse available via bank auction; prime rental/resale potential.",
-      "bhk": "4 BHK",
-      "sqft": 2800,
-      "price": 32000000,
-      "emi": 281000,
-      "status": "Bank Auction",
-      "features": ["Prime Location", "Sea View", "Clear Title"],
-      "images": ["https://picsum.photos/seed/bank405/600/400"]
-    }
-  ],
-  "acre": [
-    {
-      "id": 1,
-      "category": "acre",
-      "name": "Farmhouse Paradise",
-      "location": "Mahabalipuram, Chennai",
-      "latitude": 12.6208,
-      "longitude": 80.1937,
-      "nearby_landmarks": ["Beach – 5 km", "ECR Road – 2 km"],
-      "description": "Beautiful farmhouse with coconut plantation and organic garden.",
-      "bhk": "3 BHK",
-      "sqft": 2500,
-      "price": 15000000,
-      "emi": 131000,
-      "status": "Available",
-      "features": ["Pool", "Garden", "Parking"],
-      "images": ["https://picsum.photos/seed/acre101/600/400"]
-    },
-    {
-      "id": 2,
-      "category": "acre",
-      "name": "Eco Farm Estate",
-      "location": "Singrauli, Hyderabad",
-      "latitude": 17.0706,
-      "longitude": 78.2003,
-      "nearby_landmarks": ["City Center – 15 km", "Railway Station – 10 km"],
-      "description": "Sprawling agricultural land with fruit orchards.",
-      "bhk": null,
-      "sqft": 43560,
-      "price": 8500000,
-      "emi": 74000,
-      "status": "Available",
-      "features": ["Water Bore", "Fencing", "Electricity"],
-      "images": ["https://picsum.photos/seed/acre102/600/400"]
-    },
-    {
-      "id": 3,
-      "category": "acre",
-      "name": "Hill View Retreat",
-      "location": "Ooty, Tamil Nadu",
-      "latitude": 11.4127,
-      "longitude": 76.6953,
-      "nearby_landmarks": ["Lake – 3 km", "Highway – 1 km"],
-      "description": "Serene hill station farmhouse with tea garden views.",
-      "bhk": "4 BHK",
-      "sqft": 3200,
-      "price": 22000000,
-      "emi": 192000,
-      "status": "Available",
-      "features": ["Mountain View", "Fireplace", "Veranda"],
-      "images": ["https://picsum.photos/seed/acre103/600/400"]
-    },
-    {
-      "id": 4,
-      "category": "acre",
-      "name": "Riverside Orchards",
-      "location": "Nashik, Maharashtra",
-      "latitude": 19.9975,
-      "longitude": 73.7898,
-      "nearby_landmarks": ["Godavari River – 1 km", "Highway – 5 km"],
-      "description": "Large agricultural acre with established grape and mango orchards.",
-      "bhk": null,
-      "sqft": 43560,
-      "price": 9800000,
-      "emi": 85000,
-      "status": "Available",
-      "features": ["Irrigation", "Fencing", "Farmhouse Permit"],
-      "images": ["https://picsum.photos/seed/acre104/600/400"]
-    },
-    {
-      "id": 5,
-      "category": "acre",
-      "name": "Tea Garden Estate",
-      "location": "Munnar, Kerala",
-      "latitude": 10.0889,
-      "longitude": 77.0595,
-      "nearby_landmarks": ["Tea Factory – 2 km", "Hill Viewpoint – 3 km"],
-      "description": "Expansive estate with mature tea gardens and a caretaker bungalow.",
-      "bhk": "2 BHK",
-      "sqft": 50000,
-      "price": 18500000,
-      "emi": 161000,
-      "status": "Available",
-      "features": ["Tea Plantation", "Fencing", "Caretaker Bungalow"],
-      "images": ["https://picsum.photos/seed/acre105/600/400"]
-    }
-  ]
+    "plots": [
+        {
+            "id": 1,
+            "category": "Plot",
+            "name": "Green Valley Enclave",
+            "location": "Sarja Road, Chennai",
+            "latitude": 12.9121,
+            "longitude": 77.7223,
+            "nearby_landmarks": [
+                "Wipro Office \u2013 3 km",
+                "International School \u2013 2 km"
+            ],
+            "description": "DTCP-approved gated community plots ideal for residential construction with excellent appreciation value.",
+            "bhk": null,
+            "sqft": 1200,
+            "price": 4800000,
+            "emi": 42000,
+            "status": "Available",
+            "features": [
+                "DTCP Approved",
+                "Wide Roads",
+                "Street Lights",
+                "Water Supply"
+            ],
+            "images": [
+                "./img/plot1.jpg"
+            ]
+        },
+        {
+            "id": 2,
+            "category": "Plot",
+            "name": "Lakeview Gardens",
+            "location": "Chennai",
+            "latitude": 13.1007,
+            "longitude": 77.5963,
+            "nearby_landmarks": [
+                "Kempegowda Airport \u2013 12 km",
+                "Yelahanka Lake \u2013 1 km"
+            ],
+            "description": "Premium residential plots surrounded by greenery and calm environment.",
+            "bhk": null,
+            "sqft": 1500,
+            "price": 5250000,
+            "emi": 46000,
+            "status": "Available",
+            "features": [
+                "Gated Layout",
+                "Drainage System",
+                "Park Area"
+            ],
+            "images": [
+                "./img/plot2.jpg"
+            ]
+        },
+        {
+            "id": 3,
+            "category": "Plot",
+            "name": "Golden City Plots",
+            "location": "Shadnagar, Chennai",
+            "latitude": 17.0706,
+            "longitude": 78.2003,
+            "nearby_landmarks": [
+                "ORR \u2013 5 km",
+                "Railway Station \u2013 3 km"
+            ],
+            "description": "HMDA-approved plots suitable for future investment and villa construction.",
+            "bhk": null,
+            "sqft": 1800,
+            "price": 3600000,
+            "emi": 31500,
+            "status": "Available",
+            "features": [
+                "HMDA Approved",
+                "Black Top Roads",
+                "Security"
+            ],
+            "images": [
+                "./img/plot3.jpg"
+            ]
+        },
+        {
+            "id": 4,
+            "category": "Plot",
+            "name": "Sunrise County",
+            "location": "Sriperumbudur, Chennai",
+            "latitude": 12.9675,
+            "longitude": 79.9419,
+            "nearby_landmarks": [
+                "Hyundai Plant \u2013 4 km",
+                "NH48 \u2013 1 km"
+            ],
+            "description": "Residential plots near industrial hubs with high rental and resale potential.",
+            "bhk": null,
+            "sqft": 1000,
+            "price": 2800000,
+            "emi": 24500,
+            "status": "Sold",
+            "features": [
+                "EB Connection",
+                "Clear Title",
+                "Children Park"
+            ],
+            "images": [
+                "./img/plot4.jpg"
+            ]
+        },
+        {
+            "id": 5,
+            "category": "Plot",
+            "name": "Elite Green Acres",
+            "location": "Mahabalipuram, Chennai",
+            "latitude": 12.6208,
+            "longitude": 80.1937,
+            "nearby_landmarks": [
+                "Beach \u2013 2 km",
+                "ECR Road \u2013 500 m"
+            ],
+            "description": "Beachside plots perfect for holiday homes and resorts.",
+            "bhk": null,
+            "sqft": 2400,
+            "price": 7200000,
+            "emi": 63000,
+            "status": "Available",
+            "features": [
+                "Premium Location",
+                "Compound Wall",
+                "Water Connection"
+            ],
+            "images": [
+                "./img/plot5.jpg"
+            ]
+        }
+    ],
+    "flats": [
+        {
+            "id": 1,
+            "category": "Flat",
+            "name": "Skyline Heights",
+            "location": "Chennai",
+            "latitude": 12.9698,
+            "longitude": 77.7499,
+            "nearby_landmarks": [
+                "ITPL \u2013 2 km",
+                "Forum Mall \u2013 1 km"
+            ],
+            "description": "Luxury apartments with modern amenities in IT corridor.",
+            "bhk": "2 BHK, 3 BHK",
+            "sqft": 1350,
+            "price": 9500000,
+            "emi": 83000,
+            "status": "Under Construction",
+            "features": [
+                "Swimming Pool",
+                "Gym",
+                "Lift",
+                "Power Backup"
+            ],
+            "images": [
+                "./img/Flat1.jpg"
+            ]
+        },
+        {
+            "id": 2,
+            "category": "Flat",
+            "name": "Prestige Park View",
+            "location": "Anna Nagar, Chennai",
+            "latitude": 12.8399,
+            "longitude": 77.677,
+            "nearby_landmarks": [
+                "Infosys \u2013 3 km",
+                "Metro Station \u2013 2 km"
+            ],
+            "description": "Premium residential project ideal for IT professionals.",
+            "bhk": "2 BHK",
+            "sqft": 1150,
+            "price": 7800000,
+            "emi": 68000,
+            "status": "Available",
+            "features": [
+                "Clubhouse",
+                "Security",
+                "Covered Parking"
+            ],
+            "images": [
+                "./img/Flat2.jpg"
+            ]
+        },
+        {
+            "id": 3,
+            "category": "Flat",
+            "name": "Urban Nest",
+            "location": "Madhapuram, Chennai",
+            "latitude": 17.4474,
+            "longitude": 78.3914,
+            "nearby_landmarks": [
+                "Hitech City \u2013 1 km",
+                "Inorbit Mall \u2013 2 km"
+            ],
+            "description": "Contemporary flats with excellent connectivity.",
+            "bhk": "3 BHK",
+            "sqft": 1650,
+            "price": 10200000,
+            "emi": 89000,
+            "status": "Available",
+            "features": [
+                "Gym",
+                "Jogging Track",
+                "Power Backup"
+            ],
+            "images": [
+                "./img/Flat3.jpg"
+            ]
+        },
+        {
+            "id": 4,
+            "category": "Flat",
+            "name": "Harbor View Residences",
+            "location": "OMR, Chennai",
+            "latitude": 12.9249,
+            "longitude": 80.2275,
+            "nearby_landmarks": [
+                "IT Park \u2013 3 km",
+                "ECR \u2013 6 km"
+            ],
+            "description": "Modern mid-rise apartments with sea-breeze and smart-home features.",
+            "bhk": "2 BHK, 3 BHK",
+            "sqft": 1200,
+            "price": 8200000,
+            "emi": 72000,
+            "status": "Available",
+            "features": [
+                "Smart Home",
+                "Gym",
+                "Power Backup",
+                "Covered Parking"
+            ],
+            "images": [
+                "./img/Flat4.jpg"
+            ]
+        },
+        {
+            "id": 5,
+            "category": "Flat",
+            "name": "Pune Central Towers",
+            "location": "Perungudi, Chennai",
+            "latitude": 18.5303,
+            "longitude": 73.9352,
+            "nearby_landmarks": [
+                "EON IT Park \u2013 2 km",
+                "Airport \u2013 12 km"
+            ],
+            "description": "Well-designed apartments close to major IT hubs and retail centers.",
+            "bhk": "2 BHK, 3 BHK",
+            "sqft": 1300,
+            "price": 7600000,
+            "emi": 67000,
+            "status": "Under Construction",
+            "features": [
+                "Clubhouse",
+                "Swimming Pool",
+                "Security",
+                "Lift"
+            ],
+            "images": [
+                "./img/Flat5.jpg"
+            ]
+        }
+    ],
+    "resale_properties": [
+        {
+            "id": 1,
+            "category": "Resale",
+            "name": "Sunrise Residency",
+            "location": "Anna Nagar, Chennai",
+            "latitude": 13.085,
+            "longitude": 80.2101,
+            "nearby_landmarks": [
+                "Metro \u2013 800 m",
+                "School \u2013 1 km"
+            ],
+            "description": "Ready-to-move resale apartment in a peaceful locality.",
+            "bhk": "3 BHK",
+            "sqft": 1450,
+            "price": 8900000,
+            "emi": 78000,
+            "status": "Available",
+            "features": [
+                "Ready to Move",
+                "Lift",
+                "Covered Parking"
+            ],
+            "images": [
+                "./img/Resale1.jpg"
+            ]
+        },
+        {
+            "id": 2,
+            "category": "Resale",
+            "name": "Green Homes",
+            "location": "Kasimedu, Chennai",
+            "latitude": 12.9166,
+            "longitude": 77.6101,
+            "nearby_landmarks": [
+                "Silk Board \u2013 2 km",
+                "Hospital \u2013 1 km"
+            ],
+            "description": "Well-maintained resale flat with good ventilation.",
+            "bhk": "2 BHK",
+            "sqft": 1100,
+            "price": 7200000,
+            "emi": 63000,
+            "status": "Sold",
+            "features": [
+                "Semi-Furnished",
+                "24x7 Water"
+            ],
+            "images": [
+                "./img/Resale2.jpg"
+            ]
+        },
+        {
+            "id": 3,
+            "category": "Resale",
+            "name": "Harbour Lane Apartment",
+            "location": "T. Nagar, Chennai",
+            "latitude": 13.0412,
+            "longitude": 80.237,
+            "nearby_landmarks": [
+                "Shopping District \u2013 500 m",
+                "Bus Stand \u2013 1 km"
+            ],
+            "description": "Spacious resale apartment in a well-connected neighborhood.",
+            "bhk": "3 BHK",
+            "sqft": 1500,
+            "price": 9500000,
+            "emi": 83000,
+            "status": "Available",
+            "features": [
+                "Covered Parking",
+                "Lift",
+                "Well Ventilated"
+            ],
+            "images": [
+                "./img/Resale3.jpg"
+            ]
+        },
+        {
+            "id": 4,
+            "category": "Resale",
+            "name": "Maple Residency",
+            "location": "Ashok Nagar, Chennai",
+            "latitude": 17.432,
+            "longitude": 78.384,
+            "nearby_landmarks": [
+                "Hitech City \u2013 4 km",
+                "Metro \u2013 3 km"
+            ],
+            "description": "Neat resale flat with recent renovations and good natural light.",
+            "bhk": "2 BHK",
+            "sqft": 1150,
+            "price": 6800000,
+            "emi": 59000,
+            "status": "Available",
+            "features": [
+                "Semi-Furnished",
+                "24x7 Water",
+                "Security"
+            ],
+            "images": [
+                "./img/Resale4.jpg"
+            ]
+        },
+        {
+            "id": 5,
+            "category": "Resale",
+            "name": "Civic Park Apartment",
+            "location": "Poonamalle, Chennai",
+            "latitude": 19.119,
+            "longitude": 72.904,
+            "nearby_landmarks": [
+                "Powai Lake \u2013 1 km",
+                "IT Parks \u2013 2 km"
+            ],
+            "description": "Well-located resale apartment with park-facing view.",
+            "bhk": "2 BHK",
+            "sqft": 1000,
+            "price": 12500000,
+            "emi": 109000,
+            "status": "Available",
+            "features": [
+                "Park View",
+                "Covered Parking",
+                "Lift"
+            ],
+            "images": [
+                "./img/Resale5.jpg"
+            ]
+        }
+    ],
+    "bank_properties": [
+        {
+            "id": 2,
+            "category": "Bank Property",
+            "name": "Foreclosed Apartment",
+            "location": "Anna Nagar, Chennai",
+            "latitude": 17.4401,
+            "longitude": 78.3489,
+            "nearby_landmarks": [
+                "Financial District \u2013 1 km"
+            ],
+            "description": "Foreclosed apartment with high rental potential.",
+            "bhk": "3 BHK",
+            "sqft": 1500,
+            "price": 6500000,
+            "emi": 57000,
+            "status": "Bank Auction",
+            "features": [
+                "Discounted Price",
+                "Good Connectivity"
+            ],
+            "images": [
+                "./img/Bank2.jpg"
+            ]
+        },
+        {
+            "id": 4,
+            "category": "Bank Property",
+            "name": "Seized Independent House",
+            "location": "Tambaram, Chennai",
+            "latitude": 19.033,
+            "longitude": 73.0297,
+            "nearby_landmarks": [
+                "Central Park \u2013 3 km"
+            ],
+            "description": "Independent house seized by bank; priced below market for quick sale.",
+            "bhk": "4 BHK",
+            "sqft": 2200,
+            "price": 7600000,
+            "emi": 67000,
+            "status": "Bank Auction",
+            "features": [
+                "Below Market Price",
+                "Clear Title",
+                "Immediate Registration"
+            ],
+            "images": [
+                "./img/Bank1.jpg"
+            ]
+        },
+        {
+            "id": 5,
+            "category": "Bank Property",
+            "name": "Foreclosed Penthouse",
+            "location": "T.Nagar, Chennai",
+            "latitude": 19.055,
+            "longitude": 72.8296,
+            "nearby_landmarks": [
+                "Bandra Bandstand \u2013 1 km"
+            ],
+            "description": "High-end foreclosed penthouse available via bank auction; prime rental/resale potential.",
+            "bhk": "4 BHK",
+            "sqft": 2800,
+            "price": 32000000,
+            "emi": 281000,
+            "status": "Bank Auction",
+            "features": [
+                "Prime Location",
+                "Sea View",
+                "Clear Title"
+            ],
+            "images": [
+                "./img/Bank3.jpg"
+            ]
+        },
+        {
+            "id": 7,
+            "category": "Bank",
+            "name": "Feather Global",
+            "location": "Chennai",
+            "latitude": null,
+            "longitude": null,
+            "nearby_landmarks": [],
+            "description": "test",
+            "bhk": "5 BHK",
+            "sqft": 2500,
+            "price": 9500,
+            "emi": 90000000,
+            "status": "Bank Auction",
+            "features": [],
+            "images": [
+                "./img/Bank4.jpg"
+            ]
+        },
+        {
+            "id": 9,
+            "category": "Bank",
+            "name": "Rathor Residency",
+            "location": "Nungabakkam, Chennai",
+            "latitude": 12.3456,
+            "longitude": 98.7654,
+            "nearby_landmarks": [],
+            "description": "The hotel sale is coming at Chennai hotspot.",
+            "bhk": "",
+            "sqft": 9000,
+            "price": 1200000000,
+            "emi": 123000,
+            "status": "Bank Auction",
+            "features": [],
+            "images": [
+                "./img/Bank5.jpg"
+            ]
+        }
+    ],
+    "acre": [
+        {
+            "id": 1,
+            "category": "acre",
+            "name": "Farmhouse Paradise",
+            "location": "Mahabalipuram, Chennai",
+            "latitude": 12.6208,
+            "longitude": 80.1937,
+            "nearby_landmarks": [
+                "Beach \u2013 5 km",
+                "ECR Road \u2013 2 km"
+            ],
+            "description": "Beautiful farmhouse with coconut plantation and organic garden.",
+            "bhk": "3 BHK",
+            "sqft": 2500,
+            "price": 15000000,
+            "emi": 131000,
+            "status": "Available",
+            "features": [
+                "Pool",
+                "Garden",
+                "Parking"
+            ],
+            "images": [
+                "./img/acre1.jpg"
+            ]
+        },
+        {
+            "id": 2,
+            "category": "acre",
+            "name": "Eco Farm Estate",
+            "location": "Singrauli, Hyderabad",
+            "latitude": 17.0706,
+            "longitude": 78.2003,
+            "nearby_landmarks": [
+                "City Center \u2013 15 km",
+                "Railway Station \u2013 10 km"
+            ],
+            "description": "Sprawling agricultural land with fruit orchards.",
+            "bhk": null,
+            "sqft": 43560,
+            "price": 8500000,
+            "emi": 74000,
+            "status": "Available",
+            "features": [
+                "Water Bore",
+                "Fencing",
+                "Electricity"
+            ],
+            "images": [
+                "./img/acre2.jpg"
+            ]
+        },
+        {
+            "id": 3,
+            "category": "acre",
+            "name": "Hill View Retreat",
+            "location": "Ooty, Tamil Nadu",
+            "latitude": 11.4127,
+            "longitude": 76.6953,
+            "nearby_landmarks": [
+                "Lake \u2013 3 km",
+                "Highway \u2013 1 km"
+            ],
+            "description": "Serene hill station farmhouse with tea garden views.",
+            "bhk": "4 BHK",
+            "sqft": 3200,
+            "price": 22000000,
+            "emi": 192000,
+            "status": "Available",
+            "features": [
+                "Mountain View",
+                "Fireplace",
+                "Veranda"
+            ],
+            "images": [
+                "./img/acre3.jpg"
+            ]
+        },
+        {
+            "id": 4,
+            "category": "acre",
+            "name": "Riverside Orchards",
+            "location": "ECR, Chennai",
+            "latitude": 19.9975,
+            "longitude": 73.7898,
+            "nearby_landmarks": [
+                "Godavari River \u2013 1 km",
+                "Highway \u2013 5 km"
+            ],
+            "description": "Large agricultural acre with established grape and mango orchards.",
+            "bhk": null,
+            "sqft": 43560,
+            "price": 9800000,
+            "emi": 85000,
+            "status": "Available",
+            "features": [
+                "Irrigation",
+                "Fencing",
+                "Farmhouse Permit"
+            ],
+            "images": [
+                "./img/acre4.jpg"
+            ]
+        },
+        {
+            "id": 5,
+            "category": "acre",
+            "name": "Tea Garden Estate",
+            "location": "Ooty, Tamil Nadu",
+            "latitude": 10.0889,
+            "longitude": 77.0595,
+            "nearby_landmarks": [
+                "Tea Factory \u2013 2 km",
+                "Hill Viewpoint \u2013 3 km"
+            ],
+            "description": "Expansive estate with mature tea gardens and a caretaker bungalow.",
+            "bhk": "2 BHK",
+            "sqft": 50000,
+            "price": 18500000,
+            "emi": 161000,
+            "status": "Available",
+            "features": [
+                "Tea Plantation",
+                "Fencing",
+                "Caretaker Bungalow"
+            ],
+            "images": [
+                "./img/acre5.jpg"
+            ]
+        }
+    ]
 }

@@ -154,7 +154,7 @@
             const data = await response.json();
 
             // Combine all property categories
-            allProperties = [
+             allProperties = [
                 ...(data.plots || []).map(p => ({
                     id: p.id,
                     category: 'plots',
@@ -162,7 +162,7 @@
                     location: p.location,
                     description: p.description,
                     image: p.images[0] || '',
-                    features: { bedrooms: 'N/A', bathrooms: 'N/A', area: p.sqft + ' sqft' },
+                    features: { area: p.sqft + ' sqft' },
                     price: '₹' + (p.price / 100000).toFixed(1) + ' Lakhs',
                     emi: p.emi ? 'EMI: ₹' + p.emi.toLocaleString() : '',
                     status: p.status,
@@ -175,7 +175,7 @@
                     location: p.location,
                     description: p.description,
                     image: p.images[0] || '',
-                    features: { bedrooms: p.bhk || 'N/A', bathrooms: '2', area: p.sqft + ' sqft' },
+                    features: { area: p.sqft + ' sqft' },
                     price: '₹' + (p.price / 100000).toFixed(1) + ' Lakhs',
                     emi: p.emi ? 'EMI: ₹' + p.emi.toLocaleString() : '',
                     status: p.status,
@@ -188,7 +188,7 @@
                     location: p.location,
                     description: p.description,
                     image: p.images[0] || '',
-                    features: { bedrooms: p.bhk || 'N/A', bathrooms: '2', area: p.sqft + ' sqft' },
+                    features: { area: p.sqft + ' sqft' },
                     price: '₹' + (p.price / 100000).toFixed(1) + ' Lakhs',
                     emi: p.emi ? 'EMI: ₹' + p.emi.toLocaleString() : '',
                     status: p.status,
@@ -201,7 +201,7 @@
                     location: p.location,
                     description: p.description,
                     image: p.images[0] || '',
-                    features: { bedrooms: p.bhk || 'N/A', bathrooms: '2', area: p.sqft + ' sqft' },
+                    features: { area: p.sqft + ' sqft' },
                     price: '₹' + (p.price / 100000).toFixed(1) + ' Lakhs',
                     emi: p.emi ? 'EMI: ₹' + p.emi.toLocaleString() : '',
                     status: p.status,
@@ -214,7 +214,7 @@
                     location: p.location,
                     description: p.description,
                     image: p.images[0] || '',
-                    features: { bedrooms: p.bhk || 'N/A', bathrooms: 'N/A', area: p.sqft + ' sqft' },
+                    features: { area: p.sqft + ' sqft' },
                     price: '₹' + (p.price / 100000).toFixed(1) + ' Lakhs',
                     emi: p.emi ? 'EMI: ₹' + p.emi.toLocaleString() : '',
                     status: p.status,
@@ -298,7 +298,7 @@
         });
     });
 
-    // Function to display properties
+     // Function to display properties
     function displayProperties(propertiesArray) {
         // Clear the container
         propertiesContainer.innerHTML = '';
@@ -330,14 +330,6 @@
                         <p class="property-description">${property.description}</p>
                         <div class="property-features">
                             <div class="property-feature">
-                                <i class="fas fa-bed"></i>
-                                <span>${property.features.bedrooms}</span>
-                            </div>
-                            <div class="property-feature">
-                                <i class="fas fa-bath"></i>
-                                <span>${property.features.bathrooms} Bath</span>
-                            </div>
-                            <div class="property-feature">
                                 <i class="fas fa-arrows-alt"></i>
                                 <span>${property.features.area}</span>
                             </div>
@@ -367,7 +359,7 @@
         return shuffled.slice(0, count);
     }
 
-    // Function to display properties in a specific container
+     // Function to display properties in a specific container
     function displayPropertiesInContainer(propertiesArray, container) {
         // Clear the container
         container.innerHTML = '';
@@ -398,14 +390,6 @@
                         </div>
                         <p class="property-description">${property.description}</p>
                         <div class="property-features">
-                            <div class="property-feature">
-                                <i class="fas fa-bed"></i>
-                                <span>${property.features.bedrooms}</span>
-                            </div>
-                            <div class="property-feature">
-                                <i class="fas fa-bath"></i>
-                                <span>${property.features.bathrooms} Bath</span>
-                            </div>
                             <div class="property-feature">
                                 <i class="fas fa-arrows-alt"></i>
                                 <span>${property.features.area}</span>
@@ -622,5 +606,37 @@
 
     // Initialize single property page
     initSinglePropertyPage();
+
+// Add event listener for thumbnail clicks
+function setupThumbnailEvents() {
+    const thumbnails = document.querySelectorAll('.thumbnail');
+    const mainImage = document.getElementById('main-image');
+    
+    thumbnails.forEach((thumbnail, index) => {
+        thumbnail.addEventListener('click', function() {
+            // Update main image
+            const img = this.querySelector('img');
+            if (img) {
+                mainImage.src = img.src;
+                mainImage.alt = img.alt;
+            }
+            
+            // Update active thumbnail
+            thumbnails.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+}
+
+// Initialize single property page when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    initSinglePropertyPage();
+    setupThumbnailEvents();
+});
+
+// Also run on page load for any dynamically added content
+window.addEventListener('load', function() {
+    setupThumbnailEvents();
+});
 
 })(jQuery);
