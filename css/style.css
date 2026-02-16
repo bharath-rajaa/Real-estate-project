@@ -2616,6 +2616,160 @@ button::before {
     width: 0 !important;
 }
 
+/* ============================================
+   Contact Page Responsive Styles
+   ============================================ */
+
+/* Enquiry Form Container - Tablet and below */
+@media (max-width: 991.98px) {
+    .contact-form-container {
+        width: 75% !important;
+    }
+}
+
+/* Enquiry Form Container - Mobile */
+@media (max-width: 575.98px) {
+    .contact-form-container {
+        width: 100% !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    
+    /* Form heading size on mobile */
+    .contact-form-container h4 {
+        font-size: 1.25rem !important;
+    }
+    
+    /* Make form inputs full width on mobile */
+    .contact-form-container .col-md-6,
+    .contact-form-container .col-12 {
+        width: 100% !important;
+    }
+}
+
+/* Contact Submit Button - Responsive */
+@media (max-width: 575.98px) {
+    .contact-submit-btn {
+        width: 100% !important;
+        padding: 12px 20px !important;
+        font-size: 1rem !important;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .contact-submit-btn {
+        width: 50% !important;
+    }
+}
+
+/* Contact Header Section - Mobile */
+@media (max-width: 767.98px) {
+    .container-fluid.header.bg-white.p-0 {
+        padding: 20px 15px !important;
+    }
+    
+    .container-fluid.header.bg-white.p-0 .col-md-6.p-5 {
+        padding: 20px 15px !important;
+        margin-top: 0 !important;
+    }
+    
+    .container-fluid.header.bg-white.p-0 h2 {
+        font-size: 1.75rem !important;
+    }
+    
+    .container-fluid.header.bg-white.p-0 img.img-fluid {
+        max-height: 200px !important;
+        object-fit: cover;
+    }
+}
+
+/* Contact Section Padding - Mobile */
+@media (max-width: 767.98px) {
+    .container-fluid.py-5 {
+        padding: 30px 15px !important;
+    }
+    
+    .container-fluid.py-5 .mb-5 {
+        margin-bottom: 25px !important;
+    }
+    
+    .container-fluid.py-5 h2 {
+        font-size: 1.5rem !important;
+    }
+}
+
+/* Map iframe responsive */
+@media (max-width: 767.98px) {
+    .col-md-12.wow.fadeInUp iframe {
+        min-height: 300px !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .col-md-12.wow.fadeInUp iframe {
+        min-height: 250px !important;
+    }
+}
+
+/* Search Section - Mobile */
+@media (max-width: 767.98px) {
+    .container-fluid.bg-primary.mb-5.wow.fadeIn {
+        padding: 25px 15px !important;
+    }
+    
+    .container-fluid.bg-primary.mb-5.wow.fadeIn h2 {
+        font-size: 1.25rem !important;
+        margin-bottom: 30px !important;
+    }
+}
+
+/* Footer - Mobile */
+@media (max-width: 767.98px) {
+    footer.container-fluid.bg-dark.text-white-50.footer.pt-5.mt-5 .row.g-5 {
+        text-align: center;
+    }
+    
+    footer.container-fluid.bg-dark.text-white-50.footer.pt-5.mt-5 .col-lg-3 {
+        margin-bottom: 20px;
+    }
+    
+    footer.container-fluid.bg-dark.text-white-50.footer.pt-5.mt-5 .d-flex.pt-2 {
+        justify-content: center;
+    }
+    
+    footer.container-fluid.bg-dark.text-white-50.footer.pt-5.mt-5 .row.g-2 {
+        justify-content: center;
+    }
+    
+    footer.container-fluid.bg-dark.text-white-50.footer.pt-5.mt-5 .position-relative.mx-auto {
+        max-width: 100% !important;
+    }
+    
+    footer.container-fluid.bg-dark.text-white-50.footer.pt-5.mt-5 .copyright .row {
+        text-align: center;
+    }
+    
+    footer.container-fluid.bg-dark.text-white-50.footer.pt-5.mt-5 .copyright .col-md-6 {
+        margin-bottom: 10px;
+    }
+}
+
+/* Form Floating Labels - Mobile */
+@media (max-width: 575.98px) {
+    .form-floating {
+        margin-bottom: 15px;
+    }
+    
+    .form-floating .form-control,
+    .form-floating .form-select {
+        font-size: 0.95rem;
+    }
+    
+    .form-floating > label {
+        font-size: 0.875rem;
+    }
+}
+
 /* Responsive adjustments for button */
 @media (max-width: 768px) {
     .button-pro {
