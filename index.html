@@ -610,6 +610,27 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <script>
+const scriptURL = "https://script.google.com/macros/s/AKfycbyFcsVWteEuw3Ceru8HZ-523HoXNWQn7cXnmK3QLtV5jtuca1Un5WX4dnU_LUFXZ2U/exec";
+
+document.querySelector(".wpcf7-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    fetch(scriptURL, {
+        method: "POST",
+        body: new FormData(this)
+    })
+    .then(() => {
+        alert("Form submitted successfully!");
+        this.reset();
+    })
+    .catch(error => {
+        console.error(error);
+        alert("Something went wrong!");
+    });
+});
+    </script>
 </body>
 
 </html>

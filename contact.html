@@ -188,7 +188,7 @@
                 <h2 class="mb-4 fs-1">Contact Us</h2>
                 <div class="section-divider"></div>
                 <!-- <p class="blogs-description">Discover insightful articles, market trends, and expert advice on real
-                    estate. Stay updated with the latest property news and investment opportunities.</p> -->
+                        estate. Stay updated with the latest property news and investment opportunities.</p> -->
                 <div class="col-md-12 wow fadeInUp w-50 mx-auto justify-content-center border border-5 border-primary rounded p-3"
                     data-wow-delay="0.3s">
                     <div class="wow fadeInUp" data-wow-delay="0.5s">
@@ -198,26 +198,43 @@
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                        <input type="text" class="form-control" id="name" name="name"
+                                            placeholder="Your Name">
                                         <label for="name">Your Name</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                        <input type="email" class="form-control" id="email" name="email"
+                                            placeholder="Your Email">
                                         <label for="email">Your Email</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                        <input type="text" class="form-control" id="subject" name="subject"
+                                            placeholder="Subject">
                                         <label for="subject">Subject</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
+                                        <select class="form-select" id="category" name="category">
+                                            <option selected disabled value="">Select Category</option>
+                                            <option value="Bank Properties">Bank Properties</option>
+                                            <option value="Plots">Plots</option>
+                                            <option value="Flats">Flats</option>
+                                            <option value="Resale Properties">Resale Properties</option>
+                                            <option value="Acre Properties">Acre Properties</option>
+                                        </select>
+                                        <label for="category">Category</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="form-floating">
                                         <textarea class="form-control" placeholder="Leave a message here" id="message"
-                                            style="height: 150px"></textarea>
+                                            name="message" style="height: 150px"></textarea>
                                         <label for="message">Message</label>
                                     </div>
                                 </div>
@@ -388,6 +405,29 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <script>
+
+        const scriptURL = "https://script.google.com/macros/s/AKfycbyFcsVWteEuw3Ceru8HZ-523HoXNWQn7cXnmK3QLtV5jtuca1Un5WX4dnU_LUFXZ2U/exec";
+
+        document.querySelector("form").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            fetch(scriptURL, {
+                method: "POST",
+                body: new FormData(this)
+            })
+                .then(() => {
+                    alert("Form submitted successfully!");
+                    this.reset();
+                })
+                .catch(error => {
+                    console.error(error);
+                    alert("Something went wrong!");
+                });
+        });
+    </script>
+
 </body>
 
 </html>
