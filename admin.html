@@ -55,7 +55,7 @@
                 <div class="container-fluid">
                     <div class="row w-100 align-items-center d-lg-none">
                         <!-- Logo Column - col-4 -->
-                        <div class="col-4 d-flex align-items-center">
+                        <div class="col-2 d-flex align-items-center">
                             <a href="index.html" class="navbar-brand d-flex align-items-center">
                                 <div class="icon p-1">
                                     <img class="img-fluid" src="img/Logo.png" alt="PlotAndFlats Logo"
@@ -64,15 +64,15 @@
                             </a>
                         </div>
                         <!-- Text Column - col-6 -->
-                        <div class="col-6 d-flex align-items-center justify-content-start">
+                        <div class="col-8 d-flex align-items-center justify-content-start">
                             <div class="navbar-text-container">
                                 <h2 class="m-0 text-primary heading mobile-brand-text">PlotAndFlats.com</h2>
-                                <p class="m-0 mobile-tagline">A Concept Digital Estate Solution</p>
                             </div>
                         </div>
                         <!-- Toggle Button Column - col-2 -->
                         <div class="col-2 d-flex justify-content-end">
-                            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" title="Toggle navigation menu">
+                            <button type="button" class="navbar-toggler" data-bs-toggle="collapse"
+                                data-bs-target="#navbarCollapse" title="Toggle navigation menu">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
                         </div>
@@ -457,7 +457,7 @@
                             showMessage('error', 'Invalid response from server. Check console for details.');
                             // Show raw response in a dismissible alert for immediate visibility
                             const errorDetail = typeof response === 'string' ? response.substring(0, 200) : 'No response text';
-                             showConnectionError(url, 200, "JSON Parse Error: " + e.message + "<br><small>Response start: " + errorDetail + "...</small>");
+                            showConnectionError(url, 200, "JSON Parse Error: " + e.message + "<br><small>Response start: " + errorDetail + "...</small>");
                         }
                     },
                     error: function (xhr, status, error) {
